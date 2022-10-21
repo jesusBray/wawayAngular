@@ -1,1 +1,49 @@
-<p>login works!</p>
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <div class="bloque-derecho">
+        <span class="example-spacer"></span>
+        <button mat-button>
+            <a class="nav-link" routerLink="/home">Home</a>
+        </button>
+        <button mat-button >
+            <a class="nav-link" routerLink="/login">Login</a>
+        </button>
+        <button mat-button>
+            More
+        </button>
+        <button mat-button>
+            <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </div>
+  </mat-toolbar>
+<div class="container">
+    <div [formGroup]="dataForm" >
+        <br>
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText formControlName="email"> 
+            <label for="float-input">Email</label>
+        </span>
+        <br>
+        <span class="p-float-label">
+            <input id="float-input" type="password" pInputText formControlName="password"> 
+            <label for="float-input">Password</label>
+        </span>
+        <br>
+
+        <div class="flex align-items-center justify-content-between mb-6">
+            <div class="flex align-items-center">
+                <p-checkbox id="rememberme" [binary]="true" styleClass="mr-2"></p-checkbox>
+                <label for="rememberme1">Remember me</label>
+            </div>
+        </div>
+
+        <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full"(click)="login()" ></button>
+        <button pButton pRipple label="Create new user" icon="pi pi-user" class="w-full" (click)="createAcount()"></button>
+    </div>
+</div>

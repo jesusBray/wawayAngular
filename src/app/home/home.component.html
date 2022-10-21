@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <div class="bloque-derecho">
+    <div class="bloque-derecho">
+      <span class="example-spacer"></span>
+      <button mat-button>
+          <a class="nav-link" routerLink="/home">Home</a>
+      </button>
+      <button mat-button >
+          <a class="nav-link" routerLink="/login">Login</a>
+      </button>
+      <button mat-button>
+          More
+      </button>
+      <button mat-button>
+          <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+      </button>
+  </div>
+  </div>
+</mat-toolbar>
+  <!-- sidenav -->
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <section *ngFor="let item of data" class = "tp-section">
+      <span [routerLink]="['/home/detail', item.id]" (click)="getDetailBus(item.id)">
+        {{item.nombre}}
+      </span>
+    </section>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+  

@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+  {
+    path: '',  redirectTo: '/home', pathMatch: 'full' ,
+  },
   {
     path:'',
     loadChildren:()=> import('./client/client.module').then(m => m.ClientModule)
@@ -12,8 +16,31 @@ const routes: Routes = [
   },
   {
     path:'',
-    // loadChildren:()=> import('').then(m => m.)
-  }
+    loadChildren:()=> import('./login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path:'',
+    loadChildren:()=> import('./new-acount/new-acount.module').then(m => m.NewAcountModule)
+  },
+  {
+    path:'',
+    loadChildren:()=>import('./home/home.module').then( m => m.HomeModule)
+  },
+  {
+    path: '',
+    loadChildren:()=>import('./about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: '',
+    loadChildren:()=>import('./emp/emp.module').then(m => m.EmpModule)
+  },
+  {
+    path: 'home',
+    loadChildren:()=>import('./adm/adm.module').then(m => m.AdmModule)
+  },
+  { 
+    path: '**', component: NotFoundComponent 
+  },
 ];
 
 @NgModule({

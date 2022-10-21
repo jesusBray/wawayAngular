@@ -1,0 +1,10 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+           
+          <section *ngFor="let item of navButton">
+            <button mat-raised-button color="primary" class="navButton">{{item}}</button>
+          </section>
+    </mat-drawer>
+  
+</mat-drawer-container>
+  

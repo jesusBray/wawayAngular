@@ -1,12 +1,21 @@
-mat-toolbar{
+.example-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    /* margin: 10px;
+    border: 1px solid #555; */
+  }
+  .tp-section:hover {
+    background: rgba(167, 166, 166, 0.357);
+  }
+  mat-toolbar{
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
   }
-
-mat-drawer{
+  mat-drawer{
     min-width: 20%;
   }
   span{
@@ -15,9 +24,4 @@ mat-drawer{
   .bloque-derecho{
     display: flex;
     justify-content: flex-end;
-  }
-  .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
